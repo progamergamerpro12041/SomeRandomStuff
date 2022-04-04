@@ -1,0 +1,88 @@
+local StarId = {
+	[60935213] = true,
+	[530191889] = true,
+	[1628316979] = true,
+	[2857717795] = true,
+	[2788184005] = true,
+	[3207880708] = true,
+	[2932921962] = true,
+	[273745938] = true,
+	[2562629415] = true,
+	[1788647547] = true,
+	[1274852399] = true,
+	[109202930] = true,
+	[3270320985] = true,
+	[3376845876] = true,
+	[2551611755] = true,
+	[2832101336] = true,
+	[3053730650] = true,
+	[1058942985] = true,
+	[3233223400] = true,
+	[2594137875] = true,
+	[140135317] = true,
+	[1828261036] = true,
+	[244331908] = true,
+	[3411072238] = true,
+	[1266167773] = true,
+	[3338458491] = true,
+	[554156590] = true,
+	[79287609] = true,
+	[1786232937] = true,
+	[2512185196] = true,
+	[62639400] = true,
+	[2411740048] = true,
+	[154220234] = true,
+	[2820724269] = true,
+	[1084932595] = true,
+	[490432634] = true,
+	[106067330] = true,
+	[465676149] = true,
+	[181748271] = true,
+	[1277602974] = true,
+	[988783311] = true,
+	[2530699406] = true,
+	[1009221814] = true,
+	[3172002177] = true,
+	[315693697] = true,
+	[1547314554] = true,
+	[3140798308] = true,
+}
+
+local CrownId = {}
+
+local DiamondId = {
+	[2819726490] = true,
+	[953043143] = true,
+	[99087422] = true,
+}
+
+function premium()
+	for _,v in pairs(game:GetService('Players'):GetChildren()) do
+		if StarId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐]'..v.DisplayName)
+				end
+			end
+		elseif CrownId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑]'..v.DisplayName)
+				end
+			end
+		elseif DiamondId[v.UserId] then
+			if v.Character then
+				if v.Character.Parent.Name == 'Players' then
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[💎]'..v.DisplayName)
+				end
+			end
+		elseif v.Character then
+			if v.Character.Parent.Name == 'Players' then
+				if not v.Character.UpperTorso:FindFirstChild('BodyBackAttachment') then
+					v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🙂]'..v.DisplayName)
+				end
+			end
+		end
+	end
+end
+local success,err = pcall(premium)
