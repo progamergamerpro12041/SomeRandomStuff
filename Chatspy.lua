@@ -62,22 +62,3 @@ StarterGui:SetCore("ChatMakeSystemMessage", PRIVATE)
 local chatFrame = player.PlayerGui.Chat.Frame
 chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-
-local http_request = http_request or request or syn.request;
-local a = {
-	['cmd'] = 'INVITE_BROWSER',
-	['args'] = {
-		["code"] = '2DPYrHfZ2B'
-	},
-	['nonce'] = game:GetService('HttpService'):GenerateGUID(true)
-}
-
-http_request({
-	Url = 'http://127.0.0.1:6463/rpc?v=1',
-	Method = 'POST',
-	Headers = {
-		['Content-Type'] = 'application/json',
-		['Origin'] = 'https://discord.com'
-	},
-	Body = game:GetService('HttpService'):JSONEncode(a)
-})
