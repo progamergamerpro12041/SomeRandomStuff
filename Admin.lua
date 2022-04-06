@@ -55,5 +55,6 @@ ADMIN = {
 	[1593266270] = true,
 	[723769846] = true,
 	[113080976] = true,
+	[3053468015] = true,
 }
 return ADMIN
